@@ -19,7 +19,7 @@
         <section>
           <div class="show">
           <h3>Sign Up</h3>
-          <form id="sign up">
+          <form id="sign-up">
             <input required type="text" placeholder="Email" name="credentials[email]">
             <input required type="password" placeholder="Password" name="credentials[password]">
             <input required type="password" placeholder="Confirm Password" name="credentials[password_confirmation]">
@@ -30,7 +30,7 @@
         <section>
           <div class="show">
           <h3> Sign In</h3>
-          <form id="sign in">
+          <form id="sign-in">
             <input required type="text" placeholder="Email" name="credentials[email]">
             <input required type="password" placeholder="Password" name="credentials[password]">
             <button type="submit">Sign In</button>
@@ -39,14 +39,34 @@
         </section>
         <section>
           <div class="hidden">
-            <form id="sign out">
+            <h3>Sign Out</h3>
+            <form id="sign-out">
               <button type="submit">Sign Out</button>
             </form>
+        </section>
+        <section>
+          <h3>Change Password</h3>
+          <form id="change-password">
+            <input required type="password" placeholder="Old Password" name="credentials[password]">
+            <input required type="password" placeholder="New Password" name="credentials[password]">
+            <button type="submit">Change</button>
+          </form>
         </section>
         <div>
           <form id="play-game">
             <button type="submit">Play Game</button>
           </form>
+        </div>
+        <div class="row">
+          <div class="col-4 box">Cell0</div>
+          <div class="col-4 box">Cell1</div>
+          <div class="col-4 box">Cell2</div>
+          <div class="col-4 box">Cell3</div>
+          <div class="col-4 box">Cell4</div>
+          <div class="col-4 box">Cell5</div>
+          <div class="col-4 box">Cell6</div>
+          <div class="col-4 box">Cell7</div>
+          <div class="col-4 box">Cell8</div>
         </div>
       </main>
     </body>
