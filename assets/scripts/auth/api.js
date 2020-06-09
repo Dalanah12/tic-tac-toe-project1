@@ -1,3 +1,5 @@
+const config = require('../config')
+const
 const signUp = function(data) {
   return $.ajax({
     method: 'POST',
@@ -10,4 +12,9 @@ const signUp = function(data) {
       }
     }
   })
+}
+
+
+module.exports = {
+  signUp
 }

@@ -17,6 +17,7 @@
 
       <main>
         <section>
+          <div class="show">
           <h3>Sign Up</h3>
           <form id="sign up">
             <input required type="text" placeholder="Email" name="credentials[email]">
@@ -24,7 +25,29 @@
             <input required type="password" placeholder="Confirm Password" name="credentials[password_confirmation]">
             <button type="submit">Sign Up</button>
           </form>
+        </div>
         </section>
+        <section>
+          <div class="show">
+          <h3> Sign In</h3>
+          <form id="sign in">
+            <input required type="text" placeholder="Email" name="credentials[email]">
+            <input required type="password" placeholder="Password" name="credentials[password]">
+            <button type="submit">Sign In</button>
+          </form>
+        </div>
+        </section>
+        <section>
+          <div class="hidden">
+            <form id="sign out">
+              <button type="submit">Sign Out</button>
+            </form>
+        </section>
+        <div>
+          <form id="play-game">
+            <button type="submit">Play Game</button>
+          </form>
+        </div>
       </main>
     </body>
 </html>

@@ -1,5 +1,5 @@
 const onSignUpSuccess = function(response) {
-  $('#message').text('Signed up Successfully' + " " + response.user.email)
+  $('#message').text('Signed up Successfully' + ' ' + response.email)
   $('form').trigger('reset')
 }
 
