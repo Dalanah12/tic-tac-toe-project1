@@ -1,13 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
 
 .box {
-  height: 50px;
+  height: 150px;
   background-color: red;
-  display: block;
-
+  border: 1px solid black;
 }
 
 .row {
   border: 1px solid black;
-
+  justify-content: center;
+  width: 450px;
 }

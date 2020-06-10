@@ -22,7 +22,7 @@ const signIn = function (data) {
     data: {
       credentials: {
         email: data.credentials.email,
-        password: data.credentials.email
+        password: data.credentials.password
       }
     }
   })
