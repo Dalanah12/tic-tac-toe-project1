@@ -35,8 +35,8 @@ const onChangePassword = function (event) {
 
   api.onChangePassword(data)
 
-    .then(ui.changePwSuccess)
-    .catch(ui.changePwFailure)
+    .then(ui.onChangePasswordSuccess)
+    .catch(ui.onChangePasswordFailure)
 }
 
 const onSignOut = function (event) {
@@ -44,8 +44,8 @@ const onSignOut = function (event) {
 
   api.signOut()
 
-    .then(ui.signOutSuccess)
-    .catch(ui.signOutFailure)
+    .then(ui.onSignOutSuccess)
+    .catch(ui.onSignOutFailure)
 }
 
 module.exports = {
