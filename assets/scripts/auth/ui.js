@@ -18,6 +18,8 @@ const onSignInSuccess = function (response) {
   $('form').trigger('reset')
   $('#message').text('Successfully Signed In' + response.user.email)
   store.user = response.user
+  $('#hide').show()
+  $('#show').hide()
 }
 
 const onSignInFailure = function (response) {
@@ -38,6 +40,7 @@ const onChangePasswordFailure = function () {
 const onSignOutSuccess = function () {
   $('form').trigger('reset')
   $('#message').text('Signed Out Successfully')
+  $('#show').show()
 }
 
 const onSignOutFailure = function () {

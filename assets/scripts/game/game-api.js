@@ -1,9 +1,10 @@
 'use strict'
-const confg =
+const config = require('../config')
+const store = require('../store')
 
 const createGame = function () {
   return $.ajax({
-    url: config.apiUrl + '/new-game'
+    url: config.apiUrl + '/new-game',
     method: 'POST',
   })
 }
