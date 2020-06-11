@@ -1,4 +1,5 @@
 'use strict'
+
 const config = require('../config')
 const store = require('../store')
 
@@ -10,4 +11,8 @@ const createGame = function () {
       Authorization: 'Token token' + store.user.token
     }
   })
+}
+
+module.exports = {
+  createGame
 }

@@ -16,8 +16,9 @@ const onSignInSuccess = function (response) {
   $('form').trigger('reset')
   $('#message').text('Successfully Signed In' + response.user.email)
   store.user = response.user
-  //$('#hide').show()
-  //$('#show').hide()
+  $('#hide').show()
+  $('#show').hide()
+  $('#new-game').show()
 }
 
 const onSignInFailure = function (response) {
@@ -39,7 +40,7 @@ const onSignOutSuccess = function () {
   $('form').trigger('reset')
   $('#message').text('Signed Out Successfully')
   $('#show').show()
-  //$('#hide').hide()
+  $('#hide').hide()
 }
 
 const onSignOutFailure = function () {
