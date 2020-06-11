@@ -3,7 +3,6 @@
 const store = require('../store')
 
 const onSignUpSuccess = function (response) {
-  console.log(response)
   $('form').trigger('reset')
   $('#message').text('Sign up Successful' + response.user.email)
 }
@@ -14,12 +13,11 @@ const onSignUpFailure = function () {
 }
 
 const onSignInSuccess = function (response) {
-  console.log(response.user)
   $('form').trigger('reset')
   $('#message').text('Successfully Signed In' + response.user.email)
   store.user = response.user
-  $('#hide').show()
-  $('#show').hide()
+  //$('#hide').show()
+  //$('#show').hide()
 }
 
 const onSignInFailure = function (response) {
@@ -41,6 +39,7 @@ const onSignOutSuccess = function () {
   $('form').trigger('reset')
   $('#message').text('Signed Out Successfully')
   $('#show').show()
+  //$('#hide').hide()
 }
 
 const onSignOutFailure = function () {

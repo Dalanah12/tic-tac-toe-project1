@@ -6,5 +6,8 @@ const createGame = function () {
   return $.ajax({
     url: config.apiUrl + '/new-game',
     method: 'POST',
+    header: {
+      Authorization: 'Token token' + store.user.token
+    }
   })
 }

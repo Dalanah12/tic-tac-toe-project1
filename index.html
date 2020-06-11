@@ -14,12 +14,13 @@
     <body>
       <h1>Tic x Tac x Toe</h1>
       <p id="message"></p>
+      <p id="game-message"></p>
 
       <main>
         <div id="show">
         <section>
-          <h3>Sign Up</h3>
           <form id="sign-up">
+            <h3>Sign Up</h3>
             <input required type="text" placeholder="Email" name="credentials[email]">
             <input required type="password" placeholder="Password" name="credentials[password]">
             <input required type="password" placeholder="Confirm Password" name="credentials[password_confirmation]">
@@ -27,8 +28,8 @@
           </form>
         </section>
         <section>
-          <h3> Sign In</h3>
           <form id="sign-in">
+            <h3> Sign In</h3>
             <input required type="text" placeholder="Email" name="credentials[email]">
             <input required type="password" placeholder="Password" name="credentials[password]">
             <button type="submit">Sign In</button>
@@ -38,23 +39,26 @@
 
         <div id="hide">
         <section>
-            <h3>Sign Out</h3>
             <form id="sign-out">
               <button type="submit">Sign Out</button>
             </form>
         </section>
         <section>
-          <h3>Change Password</h3>
           <form id="change-password">
+            <h3>Change Password</h3>
             <input required type="password" placeholder="Old Password" name="credentials[password]">
             <input required type="password" placeholder="New Password" name="credentials[password]">
             <button type="submit">Change</button>
           </form>
         </section>
+
+         <section>
           <form id="new-game">
             <button type="submit">New Game</button>
           </form>
-        <div class="row">
+          </section>
+       <section class="container">
+        <div class="row h-100 board">
           <div class="col-4 box">Cell0</div>
           <div class="col-4 box">Cell1</div>
           <div class="col-4 box">Cell2</div>
@@ -65,6 +69,8 @@
           <div class="col-4 box">Cell7</div>
           <div class="col-4 box">Cell8</div>
         </div>
+      </section>
+
       </div>
       </main>
     </body>
