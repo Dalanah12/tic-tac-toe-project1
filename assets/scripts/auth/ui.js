@@ -4,7 +4,7 @@ const store = require('../store')
 
 const onSignUpSuccess = function (response) {
   $('form').trigger('reset')
-  $('#message').text('Sign up Successful' + response.user.email)
+  $('#message').text('Sign up Successful' + ' ' + response.user.email)
 }
 
 const onSignUpFailure = function () {
@@ -14,7 +14,7 @@ const onSignUpFailure = function () {
 
 const onSignInSuccess = function (response) {
   $('form').trigger('reset')
-  $('#message').text('Successfully Signed In' + response.user.email)
+  $('#message').text('Successfully Signed In')
   store.user = response.user
   $('#hide').show()
   $('#show').hide()
@@ -41,6 +41,7 @@ const onSignOutSuccess = function () {
   $('#message').text('Signed Out Successfully')
   $('#show').show()
   $('#hide').hide()
+  $('#new-game').hide()
 }
 
 const onSignOutFailure = function () {

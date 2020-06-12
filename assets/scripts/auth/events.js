@@ -33,7 +33,7 @@ const onChangePassword = function (event) {
   const form = event.target
   const data = getFormFields(form)
 
-  api.onChangePassword(data)
+  api.changePassword(data)
 
     .then(ui.onChangePasswordSuccess)
     .catch(ui.onChangePasswordFailure)

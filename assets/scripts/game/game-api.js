@@ -3,7 +3,7 @@
 const config = require('../config')
 const store = require('../store')
 
-const createGame = function () {
+const createGame = function (data) {
   return $.ajax({
     url: config.apiUrl + '/new-game',
     method: 'POST',
