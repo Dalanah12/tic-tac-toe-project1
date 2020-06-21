@@ -31,13 +31,19 @@ const signIn = function (data) {
 }
 
 const changePassword = function (data) {
+  console.log(data)
   return $.ajax({
-    url: config.apiOrigin + '/change-password/' + store.user.id,
     method: 'PATCH',
+    url: config.apiUrl + '/change-password',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data
+    data: {
+      passwords: {
+        old: data.credentials.oldpassword,
+        new: data.credentials.newpassword
+      }
+    }
   })
 }
 
