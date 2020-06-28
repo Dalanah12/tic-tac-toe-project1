@@ -15,5 +15,11 @@ $(() => {
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#hide').hide()
   $('#new-game').hide()
-  //$('new-game').on('submit', gameEvents.onCreateGame)
+  $('#game-board').hide()
+  $('#new-game').on('submit', gameEvents.onCreateGame)
 })
+
+module.exports = {
+  authEvents,
+  gameEvents
+}

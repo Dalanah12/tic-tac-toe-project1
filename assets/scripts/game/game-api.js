@@ -3,13 +3,14 @@
 const config = require('../config')
 const store = require('../store')
 
-const createGame = function (data) {
+const createGame = function (response) {
   return $.ajax({
-    url: config.apiUrl + '/new-game',
+    url: config.apiUrl + '/games',
     method: 'POST',
-    header: {
-      Authorization: 'Token token' + store.user.token
-    }
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {}
   })
 }
 
@@ -17,8 +18,8 @@ const updateGame = function (data) {
   return $.ajax({
     url: config.apiUrl + '/games/:id',
     method: 'PATCH',
-    header: {
-      Authorization: 'Token token' + store.user.token
+    headers: {
+      Authorization: 'Token token=' + store.user.token
     },
     data: {
       game: {

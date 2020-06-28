@@ -1,10 +1,11 @@
 // const store = require('../store')
 
-const createGameSuccess = function (response) {
+const createGameSuccess = function (data) {
   console.log(' new game created')
   $('#game-message').text('New Game Started')
-  $('#game-board').show()
 }
+
+// const onCreateGameFailure = function (error)
 
 module.exports = {
   createGameSuccess
