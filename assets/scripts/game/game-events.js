@@ -6,7 +6,6 @@ const onCreateGame = function (event) {
   event.preventDefault()
   $('.box').html('')
   $('#game-board').show()
-  $('.box').on('click', onUpdateGame)
   store.currentPlayer = 'x'
   $('#each-turn').text('Go' + currentPlayer + '!')
   api.createGame()

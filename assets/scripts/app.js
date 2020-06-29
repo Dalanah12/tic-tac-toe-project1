@@ -17,6 +17,7 @@ $(() => {
   $('#new-game').hide()
   $('#game-board').hide()
   $('#new-game').on('submit', gameEvents.onCreateGame)
+  $('.box').on('click', gameEvents.onUpdateGame)
 })
 
 module.exports = {
