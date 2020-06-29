@@ -14,8 +14,6 @@
     <body>
       <h1>Tic x Tac x Toe</h1>
       <p id="message"></p>
-      <p id="game-message"></p>
-
       <main>
         <div id="show">
         <section>
@@ -54,22 +52,25 @@
         </div>
 
         <section>
+          <p id="game-message"></p>
+          <p id="each-turn"></p>
          <form id="new-game">
            <button id= "new" type="submit">New Game</button>
          </form>
          </section>
 
+
        <section class="container" id="game-board">
         <div class="row h-100 board">
-          <div class="data-cell-index='0' col-4 box">Cell0</div>
-          <div class="data-cell-index='1' col-4 box">Cell1</div>
-          <div class="data-cell-index='2' col-4 box">Cell2</div>
-          <div class="data-cell-index='3' col-4 box">Cell3</div>
-          <div class="data-cell-index='4' col-4 box">Cell4</div>
-          <div class="data-cell-index='5  col-4 box">Cell5</div>
-          <div class="data-cell-index='6' col-4 box">Cell6</div>
-          <div class="data-cell-index='7' col-4 box">Cell7</div>
-          <div class="data-cell-index='8' col-4 box">Cell8</div>
+          <div data-cell-index='0' class="col-4 box"></div>
+          <div data-cell-index='1' class="col-4 box"></div>
+          <div data-cell-index='2' class="col-4 box"></div>
+          <div data-cell-index='3' class="col-4 box"></div>
+          <div data-cell-index='4' class="col-4 box"></div>
+          <div data-cell-index='5' class="col-4 box"></div>
+          <div data-cell-index='6' class="col-4 box"></div>
+          <div data-cell-index='7' class="col-4 box"></div>
+          <div data-cell-index='8' class="col-4 box"></div>
         </div>
       </section>
 

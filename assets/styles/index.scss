@@ -51,23 +51,21 @@ section {
 }
 
 #sign-in {
-  margin-top: 25px;
+  text-align: center;
 }
-
-#sign-out {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 15px 15px;
+ #sign-up {
+  text-align: center;
 }
-
 #change-password {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 25px;
+  text-align: center;
+}
+#sign-out {
+  text-align: center;
+}
+#message {
+  text-align: center;
 }
 
 #new-game {
-  margin: auto;
+    text-align: center;
 }
