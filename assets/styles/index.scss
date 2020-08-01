@@ -1,53 +1,134 @@
 @import '~bootstrap/scss/bootstrap';
 
-body {
-  background-color: #D5CE68;
-  font-family: comic sans ms, cursive, sans-serif;
-  color: #7368D5;
+.container {
+  // Set the square's container to take up 100 percent of the
+  // viewport's height (the height of the browser)
+  height: 100vh;
 }
 
-p {
-  color: #25C13F;
-}
+.square {
+  // Set the margins to auto. When the left and right
+  // margins are set to auto, they will be the same.
+  // Which ends up centering the square in between the margins.
+  margin: auto;
 
-h1 {
-  display: flex;
-  justify-content: center;
-}
+  // Sets the maximum size of the square.
+  // 100vh means 100% of the viewport (browser's) height
+  // We subtract -75px so there is space at the bottom
+  // We use the same value for height and width so the square is a square.
+  max-height: calc(100vh - 75px);
+  max-width: calc(100vh - 75px);
 
-section {
-  display: flex;
-  justify-content: center;
+
+  // `url`           - is a link to our background image, stored in the public
+  //                   folder. Note: Any local images need to be stored in `public`
+  //                   to be accessible on your deployed site.
+  // `no-repeat`     - sets the `background-repeat` attribute to `no-repeat`,
+  //                   causing the image to only show up once, and not be
+  //                   repeated on the X or Y axis.
+  // `center center` - sets the `background-position` attribute, which center's
+  //                   the images along the X and Y axis respectively
+  background: white;
+
+  // Scales the image as large as possible without stretching the image.
+  // The image will be cropped since its proportions are different from the `square` div.
+  background-size: cover;
 }
 
 .box {
-  background-color: #D5CE68;
-  border-bottom: 1px solid #7368D5;
-  border-right: 1px solid #7368D5;
-  min-height: calc(100% / 3);
+  // We will build our tic tac toe grid lines using each boxes border
+  // We set all bottom borders to be 1px, solid lines, and black.
+  // Note: We will remove the border for the bottom row later in this file.
+  border-bottom: 1px solid black;
 
-  // Flexbox
+  // We set all right borders to be 1px, solid lines, and black.
+  // Note: We will remove the border for the right row later in this file.
+  border-right: 1px solid black;
+
+  // Make every box a flex container, so we can center the content (i.e. X or O)
+  // inside of it easily
   display: flex;
+
+  // Center the content along the main-axis (left-to-right, because
+  // flex-direction defaults to `row`)
   justify-content: center;
+
+  // Center the content along the cross-axis (top-to-bottom, since the
+  // cross axis is perpendicular to the main-axis)
   align-items: center;
 
 
-  &:nth-child(3n){
-    border-right:0
+  // Set the minimum height for each box to be a third of their parent's height
+  // (square's height)
+  min-height: calc(100% / 3);
+
+
+  // Each boxes initial background color.
+  // Note: We set this to transparent when a box has been clicked, so that we
+  //       can see the image behind it.
+  background-color: white;
+
+  // Set the x's and o's to black;
+  color: black;
+
+  // Adds a shadow to the X's and O's.
+  // The shadow is placed 2px to the right and 2px below the text, respectively.
+  // Set the shadow's color to black (rgb: 0, 0, 0) and to be
+  // 25% transparent (opacity)
+  text-shadow: 2px 2px rgba(0 , 0, 0, .25);
+
+  // Set the the X's and O's font-size to 15% of the
+  // viewport's height (browser's height)
+  font-size: 15vh;
+
+  // Prevent the user from selecting the X or O text.
+  user-select: none;
+
+  // Select the 3 right boxes, `nth-child` selects elements based on their
+  // position to their siblings.
+  // giving `nth-child` the value `3n` selects every third box (boxes 3, 6, and 9)
+  // Note: This is a sass nested selector, `&` refers to the current selector `.box`
+  &:nth-child(3n) {
+    // Remove their right border, since we only want lines in between boxes
+    // for our grid
+    border-right: 0;
   }
+
+  // Select the 3 bottom boxes, `nth-last-child` selects elements based on their
+  // position, **counting from the end**.
+  // "-1n + 3" represents the last three elements among a group of siblings.
+
+  // Why? Lets see what `-1n + 3` evaluates to with different values of n
+  // when n is 0: (-1 * 0) + 3 = 3rd // selects the third to last .box
+  // when n is 1: (-1 * 1) + 3 = 2nd // selects the second to last .box
+  // when n is 2: (-1 * 2) + 3 = 1st // selects the last .box
   &:nth-last-child(-1n + 3) {
+    // Remove their bottom border, since we only want lines in between boxes
+    // for our grid
     border-bottom: 0;
   }
+
+  // When you hover over a box
+  &:hover {
+    // Set the background color
+    background-color: LightSkyBlue;
+  }
 }
 
-.board {
-  margin: auto;
-  max-height: calc(100vh - 75px);
-  max-width: calc(100vh - 75px);
+h1 {
+  font-size: 100px;
+  font-weight: bold;
+  text-align: center;
 }
 
-.container {
-  height: 100vh;
+h2 {
+  font-size: 100px;
+  font-weight: bold;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
 }
 
 #sign-in {
@@ -65,7 +146,24 @@ section {
 #message {
   text-align: center;
 }
-
-#new-game {
-    text-align: center;
+#game {
+  text-align: center;
 }
+
+#each-turn {
+  text-align: center;
+}
+
+.footer-heart{text-align:center;font-family: open sans, sans-serif;}
+
+.footer-heart a{border-bottom: 1px solid #453886;color: #453886;padding-bottom: .25em; text-decoration: none;}
+
+.footer-heart a:hover{color:#2196f3; background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23453886' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 20%;
+  border-bottom: 0;
+  padding-bottom: .3em;
+  text-decoration: none;}
+
+.emoji{vertical-align: middle;}

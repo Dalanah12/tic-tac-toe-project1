@@ -43,6 +43,7 @@ const onSignOutSuccess = function () {
   $('#show').show()
   $('#hide').hide()
   $('#new-game').hide()
+  $('#game-board').hide()
 }
 
 const onSignOutFailure = function () {

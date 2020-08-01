@@ -7,7 +7,7 @@ const onCreateGame = function (event) {
   $('.box').html('')
   $('#game-board').show()
   store.currentPlayer = 'x'
-  $('#each-turn').text('Go' + currentPlayer + '!')
+  $('#each-turn').text('Go' + ' ' + currentPlayer + '!')
   api.createGame()
     .then(ui.onCreateGameSuccess)
     .catch(ui.onCreateGameFailure)
